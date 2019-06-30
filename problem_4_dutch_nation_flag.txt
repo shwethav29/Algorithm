@@ -1,0 +1,8 @@
+As per the problem there are only three possible values in the array 0,1 and 2. So our reorganized array as per Dutch flag will have three partition.
+The elements less that one will be in the bottom, elements equal to 1 in the middle and the elements greater than 1 will be in the upper part.
+We know the starting index of the bottom part will be 0 and ending index of the upper part will be (length of array)-1.
+So we need to find the index of the middle part. Hence to start with we will assume middle index is 0
+
+Now we traverse the list once while middle_index is less than or equal 2 zero. swapping elements that are smaller to 1 towards left and larger to 1 towards right.
+
+Since we traverse the list exactly for 1 time our time complexity is O(n) and since we are doing in place swapping elements of array, space complexity is O(1).

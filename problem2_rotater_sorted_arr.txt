@@ -1,0 +1,11 @@
+To look for element in the rotated sorted array, first will find the minimum element index, using the divide and conquer method.
+This would take a O(log n) time as in each iteration we are cutting the number of element to search by half.
+Once we find the minimum element in the array we will divide the array to two parts from index 0 to min_index-1 and min_index to last element of the array.
+Now we do the binary search in one of this array based on the if the number we are looking can fall into which one this part.
+Then we do a binary search on the part of the array based on if the number is less than last element of the array.
+
+The binary search will use divide and conquer hence will be or order of O(log n).
+
+Hence the total time complexity of the algorithm is O(log n) + O(log n) which will be O(log n)
+
+Since binary search does the inplace search of the array there is not much over head in the space complexity of this algorithm.

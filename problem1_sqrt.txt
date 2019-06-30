@@ -1,0 +1,12 @@
+To find the square root of an integer n, we will start with base as 0 and upperlimit as n.
+
+This is like a Binary search where the range of number is is |0,n| and we are searching for a square root within this range.
+
+Each iteration we will be dividing the number to half, as long as the square of the half is greater than the number n.
+
+So in each iteration we are cutting short of the iteration by half.
+n,n/2,n/4,n/8... Hence the time complexity of this algorithm is logarithmic.
+
+This algorithm has a time complexity of O(log n).
+
+Space complexity is just to store the 3 integer value hence it is not very significant.

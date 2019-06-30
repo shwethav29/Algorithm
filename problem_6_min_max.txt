@@ -1,0 +1,5 @@
+To find the min and max in one pass, we will first assume first element is min and max. We will compare each element with min, and max.
+If we find min less then initial min we will replace or if we find a max more than max then that will be new max.
+
+We will be going thought the array once. Hence time complexity is O(n) and we do not need any extra storage for the array hence space complexity is O(1).
+This is a linear search.    
