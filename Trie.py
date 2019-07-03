@@ -80,6 +80,7 @@ class Trie:
                 currentNode = currentNode.children[char]
             else:
                 currentNode = None
+                break
         return currentNode        
 
 class TrieNode:

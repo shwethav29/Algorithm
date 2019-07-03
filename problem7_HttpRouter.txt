@@ -1,0 +1,19 @@
+HttpRouter implementation uses the Trie, to store the http request path and the handlers associated with the path.
+The Router is the wrapper class that for the Trie and the Handler. The Router is created with a root handler and a default not_found_handler handler.
+
+When the Router is initialized it initializes a RouteTrie with the root handler. The Router class exposes the add_handler and the look up funcationlity.
+The Split_path is the helper method used to split the request path on "/". We strip the trailing "/" so that "/home/about" is treated same as "/home/about/"
+
+We use Trie to store the path and the associated handler. We iterate through the path list formed by spliting the path on "/". WE iterate through the list of path and return the handler associate with,
+that path. If there is no handler found then. Router will return the default Not_found_handler handler.
+
+If the path can not be iterated as it does not exist then a 404 page not found in returned.
+
+If the input we look uo for "/" then root handler in returned.
+
+The lookup and add_handler both have time complexity of O(n) where n is the depth of the path.
+
+The space complexity is also O(n) where n is the length of path. Using Trie is the most efficient way of doing this as it saves space.
+
+
+

@@ -1,0 +1,25 @@
+In this problem we are using Trie to implement a autofill.
+
+We are using trie to store the words. End of the word is marked with the is_word flag in the TrieNode.
+The find method iterates though the TrieNodes starting from the root for each character in the prefix. It returns the TrieNode associated with the given prefix.
+The time complexity  of method find is O(n) where n is the length of prefix.
+
+The suffix method should return all possible words for a the given prefix.
+First we find the prefix node for the given prefix then call suffix method for the given prefix TrieNode.
+
+The suffix method has to recursively scan down the tree, for all possible paths starting from the prefix node.
+It appends the character to the suffix and recursively scans down the tree.
+If the Trienode in the given path is marked as is_word=True then it adds the current suffix word to the list of suffixes. Then continues to
+scan down the tree, till it has scanned down all the children.
+
+The time complexity for listing out the suffix will equal to:
+
+    finding the prefix node which id O(n) +
+    depth of the tree starting from the prefix node O(m) * number of leaf nodes of subtree from prefix node O(k)
+    =O(n)+O(mk)
+    = O(n) + O m^2
+    = O(n^2)
+
+
+
+
