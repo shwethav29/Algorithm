@@ -10,8 +10,12 @@ def rotated_array_search(input_list, number):
     start = 0
     end = len(input_list)-1
     min_index = find_minimum(input_list)
+    if(end<0):
+        return -1
     if(number < input_list[end]):
         return binary_search(input_list,number,min_index,end)
+    elif(number == input_list[min_index]):
+        return min_index
     else:
         return binary_search(input_list,number,0,min_index)
     return -1
@@ -35,7 +39,6 @@ def find_minimum(input_list):
         if(input_list[begin] < input_list[end]):
             return begin
         mid = begin + ((end -begin) // 2)
-        print(" low {} mid {} high {}".format(begin,mid,end))
         if(input_list[begin]<input_list[mid]):
             begin = mid
         elif(input_list[end]>input_list[mid]):
@@ -64,3 +67,6 @@ test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
 test_function([[6, 7, 8, 9, 10, 11, 12], 10])
+test_function([[],1])
+test_function([[0],1])
+test_function([[1],1])
