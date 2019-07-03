@@ -9,7 +9,6 @@ def rearrange_digits(input_list):
        (int),(int): Two maximum sums
     """
     sort_array_desc(input_list,0,len(input_list))
-    print(input_list)
 
     number1 = 0
     number2 = 0
@@ -18,12 +17,11 @@ def rearrange_digits(input_list):
             number2 = ele + number2*10
         else:
             number1 = ele + number1*10
-    print("{} {}".format(number1,number2))
     return number1,number2
 
 
 def sort_array_desc(input_list,start_index,end_index):
-    if((end_index-start_index) == 1):
+    if((end_index-start_index) <= 1):
         return
     mid = start_index + ((end_index-start_index) // 2)
     sort_array_desc(input_list,start_index,mid)
@@ -61,3 +59,7 @@ def test_function(test_case):
 
 test_function([[1, 2, 3, 4, 5], [542, 31]])
 test_function( [[4, 6, 2, 5, 9, 8], [964, 852]])
+test_function([[],[0,0]])
+test_function([[2],[2,0]])
+test_function([[1,2],[2,1]])
+test_function([[1,3,2],[31,2]])
