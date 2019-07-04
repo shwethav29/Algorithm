@@ -5,6 +5,9 @@ def get_min_max(ints):
     Args:
        ints(list): list of integers containing one or more integers
     """
+    if(len(ints)<1):
+        print("Empty list")
+        return
     min = ints[0]
     max = ints[0]
     for i in range(1,len(ints)):
@@ -23,3 +26,11 @@ random.shuffle(l)
 print ("Pass" if ((0, 9) == get_min_max(l)) else "Fail")
 
 print(get_min_max([100,34,54,32,21,103,66,72,22,12,105]))
+#(12,105)
+print(get_min_max([]))
+#Empty List
+#None
+print(get_min_max([100,100,100,100,100,100]))
+#(100,100)
+print(get_min_max([-3,-6,-22,0,44,23]))
+#(-22,44)
